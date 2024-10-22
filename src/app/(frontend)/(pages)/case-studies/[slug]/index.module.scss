@@ -1,0 +1,73 @@
+@use '@scss/common' as *;
+
+.featuredMediaWrap {
+  margin-top: 4rem;
+  width: calc(100% + var(--gutter-h));
+
+  img {
+    width: 100%;
+  }
+
+  @include large-break {
+    margin-top: 2rem;
+    margin-left: 0;
+    width: calc(100% + var(--gutter-h));
+  }
+}
+
+.metaWrapper {
+  @include mid-break {
+    display: flex;
+    margin-top: 2rem;
+  }
+}
+
+.metaItem {
+  border-top: 1px solid var(--grid-line-dark);
+  padding: 1.5rem;
+
+  @include data-theme-selector('dark') {
+    border-color: var(--grid-line-dark);
+  }
+
+  @include data-theme-selector('light') {
+    border-color: var(--grid-line-light);
+  }
+
+  @include mid-break {
+    width: 50%;
+    border-bottom: 1px solid var(--grid-line-dark);
+
+    @include data-theme-selector('dark') {
+      border-color: var(--grid-line-dark);
+    }
+
+    @include data-theme-selector('light') {
+      border-color: var(--grid-line-light);
+    }
+  }
+
+  &:last-of-type {
+    border-bottom: 1px solid var(--grid-line-dark);
+
+    @include data-theme-selector('dark') {
+      border-color: var(--grid-line-dark);
+    }
+
+    @include data-theme-selector('light') {
+      border-color: var(--grid-line-light);
+    }
+  }
+}
+
+.metaLabel {
+  @include h6;
+  & {
+    text-transform: uppercase;
+    margin-top: 0;
+  }
+}
+
+.metaValue {
+  margin: 0;
+}
